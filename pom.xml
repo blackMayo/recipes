@@ -23,6 +23,18 @@
 
   <build>
     <defaultGoal>clean package sonar:sonar</defaultGoal>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.4</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 
   <dependencyManagement>
@@ -74,6 +86,7 @@
         <artifactId>junit</artifactId>
         <version>4.12</version>
       </dependency>
+
 
     </dependencies>
   </dependencyManagement>
