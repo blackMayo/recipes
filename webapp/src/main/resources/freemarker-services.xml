@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <!-- freemarker config -->
+  <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+    <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
+    <property name="defaultEncoding" value="UTF-8"/>
+    <property name="freemarkerSettings">
+      <props>
+        <!-- spring taglib -->
+        <!--<prop key="auto_import">spring.ftl as spring</prop>-->
+        <prop key="template_exception_handler">
+          iv.recipes.webapp.view.FreemarkerExceptionHandler
+        </prop>
+      </props>
+    </property>
+  </bean>
+
+  <bean id="freemarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+    <property name="prefix" value=""/>
+    <property name="suffix" value=".ftl"/>
+    <property name="order" value="0"/>
+    <!--<property name="cache" value="false" />-->
+    <!--<property name="viewNames" value="*-freemarker"/>-->
+  </bean>
+</beans>

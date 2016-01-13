@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
@@ -6,23 +7,34 @@
 
   <display-name>Recipes Web Application</display-name>
 
+  <!--(init-param 'contextConfigLocation') will dictate which XML files will be loaded by the default XmlWebApplicationContext-->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath:freemarker-services.xml,
+      classpath:controller.xml
+    </param-value>
+  </context-param>
+
+  <!-- empty dispatcher servlet as this is a single webapplication codebase-->
   <servlet>
-    <servlet-name>recipes</servlet-name>
+    <servlet-name>recipes-dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:recipes-dispatcher-servlet.xml</param-value>
+    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>recipes</servlet-name>
+    <servlet-name>recipes-dispatcher</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
 
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/recipes-servlet.xml</param-value>
-  </context-param>
 
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
 </web-app>
