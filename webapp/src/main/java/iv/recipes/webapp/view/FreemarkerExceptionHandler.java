@@ -15,7 +15,6 @@ public class FreemarkerExceptionHandler implements TemplateExceptionHandler {
 
   private static final Logger LOG = LoggerFactory.getLogger(FreemarkerExceptionHandler.class);
 
-
   @Override
   public void handleTemplateException(TemplateException templateException, Environment environment,
                                       Writer writer) throws TemplateException {

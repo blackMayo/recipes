@@ -7,23 +7,23 @@
 
   <display-name>Recipes Web Application</display-name>
 
-  <!--(init-param 'contextConfigLocation') will dictate which XML files will be loaded by the default XmlWebApplicationContext-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-      classpath:freemarker-services.xml,
-      classpath:controller.xml
+      WEB-INF/applicationContext.xml
     </param-value>
   </context-param>
 
-  <!-- empty dispatcher servlet as this is a single webapplication codebase-->
+  <!--(init-param 'contextConfigLocation') will dictate which XML files will be loaded by the default XmlWebApplicationContext-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!-- empty dispatcher servlet as this is a single webapplication codebase -->
+  <!-- all Controllers, ViewResolvers, HandlerMapping classes etc will be placed into the ROOT context -->
   <servlet>
     <servlet-name>recipes-dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:recipes-dispatcher-servlet.xml</param-value>
-    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
@@ -33,8 +33,8 @@
   </servlet-mapping>
 
 
-  <welcome-file-list>
-    <welcome-file>hello.html</welcome-file>
-  </welcome-file-list>
+  <!--  <welcome-file-list>
+      <welcome-file>hello.html</welcome-file>
+    </welcome-file-list>-->
 
 </web-app>

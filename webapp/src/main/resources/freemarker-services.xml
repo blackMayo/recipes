@@ -22,8 +22,6 @@
   <bean id="freemarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
     <property name="prefix" value=""/>
     <property name="suffix" value=".ftl"/>
-    <property name="order" value="0"/>
-    <!--<property name="cache" value="false" />-->
     <!--<property name="viewNames" value="*-freemarker"/>-->
   </bean>
 </beans>

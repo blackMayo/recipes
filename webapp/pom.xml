@@ -26,6 +26,28 @@
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
           <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+          <webResources>
+            <resource>
+              <directory>${basedir}/src/main/webapp</directory>
+              <excludes>
+                <exclude>error.html</exclude>
+                <exclude>WEB-INF/web.xml</exclude>
+                <exclude>WEB-INF/system/*.properties</exclude>
+              </excludes>
+            </resource>
+            <resource>
+              <directory>${basedir}/src/main/webapp</directory>
+              <filtering>true</filtering>
+              <includes>
+                <include>error.html</include>
+                <include>WEB-INF/web.xml</include>
+                <include>WEB-INF/system/*.properties</include>
+              </includes>
+              <excludes>
+                <exclude>WEB-INF/templates/**/*.*</exclude>
+              </excludes>
+            </resource>
+          </webResources>
         </configuration>
       </plugin>
     </plugins>
@@ -66,6 +88,10 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
     </dependency>
 
   </dependencies>
