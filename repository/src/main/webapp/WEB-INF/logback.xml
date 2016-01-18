@@ -9,7 +9,7 @@
   <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- daily rollover -->
-      <fileNamePattern>${log.dir}/%d{yyyyMMdd}-${HOSTNAME}-recipes-database.log</fileNamePattern>
+      <fileNamePattern>${log.dir}/%d{yyyyMMdd}-${HOSTNAME}-recipes-repository.log</fileNamePattern>
     </rollingPolicy>
     <prudent>true</prudent>
     <encoder>

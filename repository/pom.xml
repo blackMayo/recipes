@@ -9,9 +9,9 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>database</artifactId>
+  <artifactId>recipes-repository</artifactId>
   <packaging>war</packaging>
-  <name>recipes-database</name>
+  <name>recipes-repository</name>
   <inceptionYear>2016</inceptionYear>
 
 </project>
