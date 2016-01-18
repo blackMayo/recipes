@@ -73,6 +73,18 @@
         <version>${spring.version}</version>
       </dependency>
 
+      <!-- DB stuff -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-connector.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
       <!-- LOGGING -->
       <dependency>
         <groupId>org.slf4j</groupId>
@@ -131,6 +143,7 @@
     <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
     <freemarker.version>2.3.23</freemarker.version>
     <slf4j.version>1.7.13</slf4j.version>
+    <mysql-connector.version>5.1.38</mysql-connector.version>
   </properties>
 
 </project>

@@ -14,4 +14,16 @@
   <name>recipes-repository</name>
   <inceptionYear>2016</inceptionYear>
 
+  <dependencies>
+    <!-- DB stuff -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+    </dependency>
+  </dependencies>
+
 </project>
