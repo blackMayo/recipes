@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="false">
+
+  <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} %-7([%level]) %logger{0} - %message \\(%thread\\)%n"/>
+
+  <appender
+    name="file"
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <encoder>
+      <pattern>${log.pattern}</pattern>
+    </encoder>
+    <prudent>true</prudent>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover -->
+      <fileNamePattern>/var/log/tomcat7/%d{yyyyMMdd}-recipes-repository.log</fileNamePattern>
+    </rollingPolicy>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="file"/>
+  </root>
+
+</configuration>
